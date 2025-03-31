@@ -7,3 +7,5 @@ response = requests.get(url)
 
 with open('cso.json', 'wb') as f:
     f.write(response.content)
+
+   
