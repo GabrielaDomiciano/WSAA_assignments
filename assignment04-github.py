@@ -1,3 +1,10 @@
+# Gabriela Domiciano Avellar
+
+# This code imports libraries and sets up a URL to access a private GitHub repository information using an API. 
+# Then send a request to the GitHub API, retrieves the data, and save it on a file called repos-private.json. 
+# The authentication is handled using API keys from a config.py file.
+
+
 import requests
 import json
 import os
@@ -13,7 +20,6 @@ url = 'https://api.github.com/repos/GabrielaDomiciano/private'
 
 #apikey='config.py'
 
-
 repo_clone_url = f'https://{apikeys["htmltopdfkey"]}@github.com/GabrielaDomiciano/private.git'
 clone_dir = "private"
 file_to_edit = "andrew_replace.txt"  # file name that has "Andrew"
@@ -26,7 +32,6 @@ print("Request status:", response.status_code)
 with open(filename, 'w') as fp:
     repoJSON = response.json()
     json.dump(repoJSON, fp, indent=4)
-
 
 
 # Clone the repository
@@ -66,7 +71,9 @@ print(os.listdir(clone_dir))
 
 
 
-
+# reference:
+# https://github.com/andrewbeattycourseware/WSAA-Courseware/tree/main/code/Topic05-authentication/lecture
+# https://nira.com/how-to-clone-a-private-repository-in-github/
 
 
 
